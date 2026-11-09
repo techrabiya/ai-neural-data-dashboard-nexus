@@ -47,10 +47,9 @@ try:
             df = pd.read_csv(uploaded_file)
             st.sidebar.success("Custom CSV stream successfully loaded!")
         else:
-            st.info("Smart Warning: Please upload a CSV file via the sidebar to initialize custom data streams.")
             np.random.seed(42)
             df = pd.DataFrame({
-                "Timestamp": pd.date_range(start="2026-01-01", periods=100, freq="H"),
+                "Timestamp": pd.date_range(start="2026-01-01", periods=100, freq="h"),
                 "Neural_Load": np.random.uniform(10.0, 100.0, 100),
                 "Signal_Efficiency": np.random.uniform(50.0, 99.9, 100),
                 "Category": np.random.choice(["Alpha", "Beta", "Gamma"], 100)
@@ -58,7 +57,7 @@ try:
     else:
         np.random.seed(42)
         df = pd.DataFrame({
-            "Timestamp": pd.date_range(start="2026-01-01", periods=100, freq="H"),
+            "Timestamp": pd.date_range(start="2026-01-01", periods=100, freq="h"),
             "Neural_Load": np.random.uniform(10.0, 100.0, 100),
             "Signal_Efficiency": np.random.uniform(50.0, 99.9, 100),
             "Category": np.random.choice(["Alpha", "Beta", "Gamma"], 100)
